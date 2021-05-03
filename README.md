@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<br />
+<p align="center">
+  <a href="https://github.com/Kristiannmiller/HW-Take-Home">
+    <img src="./src/assets/WalkThrough.gif" alt="an overview gif of the application in action" width="600">
+  </a>
+  <h1 align="center" style="padding:0px; margin:10px 0px">Highwing Code Challenge</h1>
+  <h5 align="center" style="margin:0px 0px 20px 0px; padding:0px;">Executed by Kristi Miller</h5>
+  <p align="left">
+    Highwing wants to make some information available to an insurance carrier user based on data that we’ve aggregated from some insurance brokers that we work with. Specifically, we want to give the carrier user the ability to quickly view a summary of all of the business that the broker represents, as well as just the subset of that business that the user’s carrier currently has, side-by-side.
+    <br/>
+    <br/>
+    <a href="https://invis.io/RWXOGR6E7AT#/421418913_Evaluate_Stats_Filter_Open_Copy_2">Here’s a comp of what this screen should look like </a>    
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
 
-## Available Scripts
+### Built With
+* TypeScript
+* React
+* CSS
+* Chart.js
+* Jest & React Testing Library
+* Apollo Client
 
-In the project directory, you can run:
+### Installation
+To install the application:
+1. Clone the repo
+2. Install NPM packages
+3. run `npm start`
+4. Open `localhost:3000` in your browser
 
-### `npm start`
+### Testing
+To see test suites:
+```
+npm test
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## See it in Action
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="./src/assets/Walkthrough.gif" alt="another gif of the application in action" width="600">
 
-### `npm test`
+## Process
+-
+-
+-
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Next Steps
 
-### `npm run build`
+-
+-
+-
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact Kristi
+* [Github](https://github.com/Kristiannmiller)
+* [Portfolio](http://www.kristiannmiller.com)
+* [LinkedIn](https://www.linkedin.com/in/kristiannmiller/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Additional Links
+- [Challenge Outline](https://docs.google.com/document/d/1HB2hcpzUeHeaxDxUnJFIjzq0dlXYKixPNK6wtz6RaF8/edit)
+- [Schema](https://hw-fe-challenge-api.herokuapp.com/graphiql)
+- [Repository](https://github.com/Kristiannmiller/HW-Take-Home)
+- [Project Board](https://github.com/Kristiannmiller/HW-Take-Home/projects/2?add_cards_query=is%3Aopen)
