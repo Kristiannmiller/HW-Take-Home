@@ -1,0 +1,24 @@
+.toggle-menu {
+  padding: 70px 39px;
+}
+.toggle-option {
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  padding: 12px 19px;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  margin-right: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .24px;
+  color: #6D7777;
+  opacity: 70%;
+}
+.toggle-option:active {
+  background-color: #00E0C2;
+  opacity: 100%;
+  color: #006667;
+  border: 1px solid #00E0C2;
+}
