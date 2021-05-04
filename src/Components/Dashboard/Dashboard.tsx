@@ -7,6 +7,10 @@ function Dashboard() {
   return (
     <section className="dashboard">
       <ToggleMenu />
+      <section className="titles">
+        <h3>Broker Book</h3>
+        <h3>Carrier Placement</h3>
+      </section>
     </section>
   );
 }
