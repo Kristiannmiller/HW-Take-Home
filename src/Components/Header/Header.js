@@ -3,7 +3,7 @@ import arrow from '../../Assets/BackArrow.png';
 import bell from '../../Assets/Bell.png';
 import user from '../../Assets/user.png';
 
-function Header() {
+function Header({brokerName, brokerDes}) {
   return (
     <header>
       <section className="header-nav">
@@ -15,10 +15,10 @@ function Header() {
         </section>
       </section>
       <section className="broker-data">
-        <h2>Broker Name</h2>
+        <h2>{brokerName}</h2>
         <article className="broker-context">
           <p><span className="data-title">Website</span>www.website.com</p>
-          <p><span className="data-title">Summary</span>Travelers is the second largest writer of U.S. commercial property casualty insurace and the third largest writer of U.S. personal insurance through independent agents.</p>
+          <p><span className="data-title">Summary</span>{brokerDes}</p>
         </article>
       </section>
     </header>
