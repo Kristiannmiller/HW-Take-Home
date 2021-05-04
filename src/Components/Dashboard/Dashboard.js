@@ -11,6 +11,9 @@ function Dashboard() {
         <h3>Broker Book</h3>
         <h3>Carrier Placement</h3>
       </section>
+      <section className="cards">
+        <BDCard />
+      </section>
     </section>
   );
 }
