@@ -1,0 +1,21 @@
+.navigation {
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 33px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #C5CED0;
+}
+.nav-btn {
+  cursor: pointer;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  color: #003D40;
+  font-size: 16px;
+  margin-right: 50px;
+  padding-bottom: 40px;
+}
+.nav-btn:active {
+  color: #00E0C2;
+  border-bottom: 4px solid #00E9CB;
+}

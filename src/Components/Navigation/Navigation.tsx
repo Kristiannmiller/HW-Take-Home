@@ -1,10 +1,12 @@
 import './Navigation.css';
 
+
 function Navigation() {
   return (
-    <>
-    Navigation
-    </>
+    <section className="navigation">
+      <a className="nav-btn">SNAPSHOT</a>
+      <a className="nav-btn">TRENDS</a>
+    </section>
   );
 }
 
