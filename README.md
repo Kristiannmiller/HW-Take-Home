@@ -16,7 +16,7 @@
 ## About The Project
 
 ### Built With
-* TypeScript
+* JavaScript
 * React
 * CSS
 * Chart.js

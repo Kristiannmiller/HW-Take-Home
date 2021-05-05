@@ -1,13 +1,20 @@
 import { render, screen } from '@testing-library/react';
-import Header from '../Components/Header/Header.tsx';
+import Header from '../Components/Header/Header';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
 
-test('renders Header', () => {
-  render(<Header />);
-  const linkElement = screen.getByText('Header');
-  expect(linkElement).toBeInTheDocument();
+describe('Header', () => {
+  test('renders Header', () => {
+    render(
+      <Header
+        brokerName='Best Broker'
+        brokerDes='The best broker out there!'
+      />);
+    const title = screen.getByText('Best Broker');
+    const summary = screen.getByText('The best broker out there!');
+    expect(title).toBeInTheDocument();
+    expect(summary).toBeInTheDocument();
+  });
 });
