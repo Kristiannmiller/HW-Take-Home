@@ -80,6 +80,20 @@ function BDCard({ cardData }) {
 		})
 	}
 
+  const displayOptionData = (isBroker) => {
+    if(isBroker) {
+      let index = cardData.labels.findIndex(label => label === brokerOption)
+      let percentage = cardData.brokerNums[index]
+      let value = cardData.brokerVals[index]
+      return `${percentage}% || $${value}`
+    } else {
+      let index = cardData.labels.findIndex(label => label === carrierOption)
+      let percentage = cardData.carrierNums[index]
+      let value = cardData.carrierVals[index]
+      return `${percentage}% || $${value}`
+    }
+  }
+
 
 
   return (
@@ -98,8 +112,8 @@ function BDCard({ cardData }) {
 		          options={options}
 		        />
 						<section className="select-data">
-							<h6 className="info">03% || $13,470</h6>
-							<h6 className="selection">Legend Title</h6>
+							<h6 className="info">{displayOptionData(true)}</h6>
+							<h6 className="selection">{brokerOption}</h6>
 						</section>
 					</section>
         </section>
@@ -118,8 +132,8 @@ function BDCard({ cardData }) {
 		          options={options}
 		        />
 						<section className="select-data">
-							<h6 className="info">03% || $13,470</h6>
-							<h6 className="selection">Legend Title</h6>
+							<h6 className="info">{displayOptionData(false)}</h6>
+							<h6 className="selection">{carrierOption}</h6>
 						</section>
 					</section>
         </section>

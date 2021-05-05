@@ -38,28 +38,36 @@ function Dashboard() {
     let labels = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => range.title)
     let brokerNums = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => Math.round(range.proportion))
     let carrierNums = data.mostRecentSnapshot.carrierSlice.premiumRange.map(range => Math.round(range.proportion))
-    return {labels, brokerNums, carrierNums, chartTitle: 'Premium Range'}
+    let brokerVals = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => range.premium)
+    let carrierVals = data.mostRecentSnapshot.carrierSlice.premiumRange.map(range => range.premium)
+    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Premium Range'}
   }
 
   const marketsCard = () => {
     let labels = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => range.title)
     let brokerNums = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => Math.round(range.proportion))
     let carrierNums = data.mostRecentSnapshot.carrierSlice.brokerDivision.map(range => Math.round(range.proportion))
-    return {labels, brokerNums, carrierNums, chartTitle: 'Markets'}
+    let brokerVals = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => range.premium)
+    let carrierVals = data.mostRecentSnapshot.carrierSlice.brokerDivision.map(range => range.premium)
+    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Markets'}
   }
 
   const industriesCard = () => {
     let labels = data.mostRecentSnapshot.brokerSlice.industries.map(range => range.title)
     let brokerNums = data.mostRecentSnapshot.brokerSlice.industries.map(range => Math.round(range.proportion))
     let carrierNums = data.mostRecentSnapshot.carrierSlice.industries.map(range => Math.round(range.proportion))
-    return {labels, brokerNums, carrierNums, chartTitle: 'Industries'}
+    let brokerVals = data.mostRecentSnapshot.brokerSlice.industries.map(range => range.premium)
+    let carrierVals = data.mostRecentSnapshot.carrierSlice.industries.map(range => range.premium)
+    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Industries'}
   }
 
   const productsCard = () => {
     let labels = data.mostRecentSnapshot.brokerSlice.products.map(range => range.title)
     let brokerNums = data.mostRecentSnapshot.brokerSlice.products.map(range => Math.round(range.proportion))
     let carrierNums = data.mostRecentSnapshot.carrierSlice.products.map(range => Math.round(range.proportion))
-    return {labels, brokerNums, carrierNums, chartTitle: 'Products'}
+    let brokerVals = data.mostRecentSnapshot.brokerSlice.products.map(range => range.premium)
+    let carrierVals = data.mostRecentSnapshot.carrierSlice.products.map(range => range.premium)
+    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Products'}
   }
 
   return (
