@@ -1,10 +1,11 @@
 import './Dashboard.css';
+
 import ToggleMenu from '../ToggleMenu/ToggleMenu'
 import BDCard from '../BDCard/BDCard'
+
 import { brokerCarrierQuery } from '../../apiCalls';
 import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
-
 
 
 function Dashboard() {
@@ -26,7 +27,8 @@ function Dashboard() {
     optionToChange === "products" && setProductsMenu(!productsMenu)
   }
 
-  const createCard = (cardInfo) => {
+  // --- DISPLAY FUNCTIONS --- //
+  const displayCard = (cardInfo) => {
     return(
       <BDCard
         cardData={cardInfo}
@@ -34,40 +36,14 @@ function Dashboard() {
     )
   }
 
-  const premiumCard = () => {
-    let labels = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => range.title)
-    let brokerNums = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => Math.round(range.proportion))
-    let carrierNums = data.mostRecentSnapshot.carrierSlice.premiumRange.map(range => Math.round(range.proportion))
-    let brokerVals = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => range.premium)
-    let carrierVals = data.mostRecentSnapshot.carrierSlice.premiumRange.map(range => range.premium)
-    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Premium Range'}
-  }
-
-  const marketsCard = () => {
-    let labels = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => range.title)
-    let brokerNums = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => Math.round(range.proportion))
-    let carrierNums = data.mostRecentSnapshot.carrierSlice.brokerDivision.map(range => Math.round(range.proportion))
-    let brokerVals = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => range.premium)
-    let carrierVals = data.mostRecentSnapshot.carrierSlice.brokerDivision.map(range => range.premium)
-    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Markets'}
-  }
-
-  const industriesCard = () => {
-    let labels = data.mostRecentSnapshot.brokerSlice.industries.map(range => range.title)
-    let brokerNums = data.mostRecentSnapshot.brokerSlice.industries.map(range => Math.round(range.proportion))
-    let carrierNums = data.mostRecentSnapshot.carrierSlice.industries.map(range => Math.round(range.proportion))
-    let brokerVals = data.mostRecentSnapshot.brokerSlice.industries.map(range => range.premium)
-    let carrierVals = data.mostRecentSnapshot.carrierSlice.industries.map(range => range.premium)
-    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Industries'}
-  }
-
-  const productsCard = () => {
-    let labels = data.mostRecentSnapshot.brokerSlice.products.map(range => range.title)
-    let brokerNums = data.mostRecentSnapshot.brokerSlice.products.map(range => Math.round(range.proportion))
-    let carrierNums = data.mostRecentSnapshot.carrierSlice.products.map(range => Math.round(range.proportion))
-    let brokerVals = data.mostRecentSnapshot.brokerSlice.products.map(range => range.premium)
-    let carrierVals = data.mostRecentSnapshot.carrierSlice.products.map(range => range.premium)
-    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: 'Products'}
+  // --- HELPER FUNCTIONS --- //
+  const createCard = (dataSection, title) => {
+    let labels = data.mostRecentSnapshot.brokerSlice[dataSection].map(range => range.title)
+    let brokerNums = data.mostRecentSnapshot.brokerSlice[dataSection].map(range => Math.round(range.proportion))
+    let carrierNums = data.mostRecentSnapshot.carrierSlice[dataSection].map(range => Math.round(range.proportion))
+    let brokerVals = data.mostRecentSnapshot.brokerSlice[dataSection].map(range => range.premium)
+    let carrierVals = data.mostRecentSnapshot.carrierSlice[dataSection].map(range => range.premium)
+    return {labels, brokerNums, brokerVals, carrierNums, carrierVals, chartTitle: title}
   }
 
   return (
@@ -85,10 +61,10 @@ function Dashboard() {
         <h3>Carrier Placement</h3>
       </section>
       <section className="cards">
-        {premiumMenu && createCard(premiumCard())}
-        {marketsMenu && createCard(marketsCard())}
-        {industriesMenu && createCard(industriesCard())}
-        {productsMenu && createCard(productsCard())}
+        {premiumMenu && displayCard(createCard('premiumRange', 'Premium Range'))}
+        {marketsMenu && displayCard(createCard('brokerDivision', 'Markets'))}
+        {industriesMenu && displayCard(createCard('industries', 'Industries'))}
+        {productsMenu && displayCard(createCard('products', 'Products'))}
       </section>
     </section>
   );
