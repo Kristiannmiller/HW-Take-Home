@@ -1,9 +1,4 @@
-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+/* --- USER --- */
 .header-nav {
   box-sizing: border-box;
   padding: 41px 35px 0px 35px;
@@ -22,11 +17,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-h5 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  color: #6D7777
-}
 .user {
   height: 48px;
   padding: 0px 21px;
@@ -34,6 +24,8 @@ h5 {
 .bell {
   height: 30px;
 }
+
+/* --- BROKER --- */
 .broker-data {
   display: flex;
   flex-direction: column;
@@ -42,22 +34,6 @@ h5 {
 .broker-context {
   width: 683px;
   height: 101px;
-}
-h2 {
-  padding: 47px 33px;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 100;
-  font-size: 48px;
-  color: #003D40;
-  letter-spacing: -1.33px;
-}
-p {
-  padding-left: 33px;
-  padding-top: 1em;
-  text-align: left;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 200;
-  font-size: 16px;
 }
 .data-title {
   padding-right: 50px;

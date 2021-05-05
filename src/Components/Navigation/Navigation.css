@@ -16,7 +16,7 @@
   margin-right: 50px;
   padding-bottom: 40px;
 }
-.nav-btn:active {
+.active-nav {
   color: #00E0C2;
   border-bottom: 4px solid #00E9CB;
 }
