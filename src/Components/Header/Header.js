@@ -1,7 +1,9 @@
 import './Header.css';
+
 import arrow from '../../Assets/BackArrow.png';
 import bell from '../../Assets/Bell.png';
 import user from '../../Assets/user.png';
+
 
 function Header({brokerName, brokerDes}) {
   return (
@@ -22,6 +24,6 @@ function Header({brokerName, brokerDes}) {
       </section>
     </header>
   );
-}
+};
 
 export default Header;

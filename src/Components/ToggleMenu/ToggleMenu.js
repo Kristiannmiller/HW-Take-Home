@@ -4,7 +4,7 @@ function ToggleMenu({ adjustOptions, selected }) {
 
   const handleClick = (choice) => {
     adjustOptions(choice)
-  }
+  };
 
   return (
     <section className="toggle-menu">
@@ -18,6 +18,6 @@ function ToggleMenu({ adjustOptions, selected }) {
       className={selected.products ? "toggle-option active" : "toggle-option"}>Products</button>
     </section>
   );
-}
+};
 
 export default ToggleMenu;

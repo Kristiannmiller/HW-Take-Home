@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
 
 
-
 export const brokerQuery = gql`
   query {
     mostRecentSnapshot {
@@ -11,7 +10,7 @@ export const brokerQuery = gql`
     }
   }
 }
-`
+`;
 export const brokerCarrierQuery = gql`
   query {
     mostRecentSnapshot {
@@ -61,4 +60,4 @@ export const brokerCarrierQuery = gql`
       }
     }
   }
-`
+`;

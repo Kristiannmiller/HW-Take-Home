@@ -1,4 +1,5 @@
 import './BDCard.css';
+
 import { Doughnut } from 'react-chartjs-2';
 import React, { useState } from 'react';
 
@@ -10,8 +11,9 @@ function BDCard({ cardData }) {
 
   const changeOption = (li, isBroker) => {
     isBroker ? setBrokerOption(li) : setCarrierOption(li)
-  }
+  };
 
+// --- CHART SETTINGS --- //
   const brokerChart = {
     labels: cardData.labels,
     datasets: [
@@ -27,7 +29,7 @@ function BDCard({ cardData }) {
 				borderWidth: '0'
       }
     ]
-  }
+  };
   const carrierChart = {
     labels: cardData.labels,
     datasets: [
@@ -43,7 +45,7 @@ function BDCard({ cardData }) {
 				borderWidth: '0'
       }
     ]
-  }
+  };
   const options = {
 		layout: {
 			padding: 0,
@@ -59,11 +61,12 @@ function BDCard({ cardData }) {
 				position:'left',
 			}
 		}
-	}
+	};
 
-	const createList = (list, isBroker) => {
+  // --- DISPLAY FUNCTIONS --- //
+	const displayList = (isBroker) => {
 		let colors = [ '#003D40', '#00CE5F', '#00E834', '#00E9CB' ]
-		return list.map((li, i) => {
+		return cardData.labels.map((li, i) => {
 			let color = colors[i]
 			if(isBroker && li === brokerOption || !isBroker && li === carrierOption) {
         return (
@@ -78,8 +81,7 @@ function BDCard({ cardData }) {
         )
       }
 		})
-	}
-
+	};
   const displayOptionData = (isBroker) => {
     if(isBroker) {
       let index = cardData.labels.findIndex(label => label === brokerOption)
@@ -92,16 +94,16 @@ function BDCard({ cardData }) {
       let value = cardData.carrierVals[index]
       return `${percentage}% || $${value}`
     }
-  }
+  };
 
   return (
-    <section className="card">
+    <section className="card-wrap">
       <article className="card-segment">
         <h4>{cardData.chartTitle}</h4>
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(cardData.labels, true)}
+							{displayList(true)}
 						</ul>
 					</section>
 					<section className="chart-area">
@@ -121,7 +123,7 @@ function BDCard({ cardData }) {
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(cardData.labels, false)}
+							{displayList(false)}
 						</ul>
 					</section>
 					<section className="chart-area">
@@ -138,6 +140,6 @@ function BDCard({ cardData }) {
       </article>
     </section>
   );
-}
+};
 
 export default BDCard;

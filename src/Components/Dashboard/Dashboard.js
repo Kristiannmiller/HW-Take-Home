@@ -1,7 +1,7 @@
 import './Dashboard.css';
 
-import ToggleMenu from '../ToggleMenu/ToggleMenu'
-import BDCard from '../BDCard/BDCard'
+import ToggleMenu from '../ToggleMenu/ToggleMenu';
+import BDCard from '../BDCard/BDCard';
 
 import { brokerCarrierQuery } from '../../apiCalls';
 import { useQuery } from '@apollo/client';

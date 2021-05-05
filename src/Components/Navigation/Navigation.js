@@ -8,6 +8,6 @@ function Navigation() {
       <button className="nav-btn">TRENDS</button>
     </section>
   );
-}
+};
 
 export default Navigation;

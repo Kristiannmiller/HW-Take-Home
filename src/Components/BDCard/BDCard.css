@@ -1,8 +1,5 @@
-canvas {
-  width: 168px !important;
-  height: 168px !important;
-}
-.card {
+/* --- CARD --- */
+.card-wrap {
   box-sizing: border-box;
   padding-left:48px;
   margin-top: 71px;
@@ -17,11 +14,8 @@ canvas {
   flex-direction: column;
   align-items: flex-start;
 }
-.legend {
-  padding-left: 33px;
-  width: 50%;
-  text-align-last: start;
-}
+
+/* --- CHART --- */
 .chart {
   margin-top: 36px;
   display: flex;
@@ -29,16 +23,13 @@ canvas {
   width: 100%;
   box-sizing: border-box;
 }
-
-h4 {
-  text-align: start;
+.legend {
+  padding-left: 33px;
   width: 50%;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 100;
-  font-size: 32px;
-  color: #4A4A4A;
-  letter-spacing: -1.07px;
+  text-align-last: start;
 }
+
+/* --- SELECT DATA --- */
 .select-data {
   align-items: center;
   width: 100%;
@@ -59,24 +50,4 @@ h4 {
   color: #515A5A;
   font-size: 14px;
   margin-bottom: 5px;
-}
-li {
-  cursor: pointer;
-  list-style: square outside none;
-  text-align: start;
-  width: 50%;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  color: #6D7777;
-  line-height: 32px;
-}
-h6 {
-  width: 50%;
-  text-align: start;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  color: #515A5A;
-  letter-spacing: -1.07px;
 }
