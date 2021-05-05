@@ -61,6 +61,7 @@ h4 {
   margin-bottom: 5px;
 }
 li {
+  cursor: pointer;
   list-style: square outside none;
   text-align: start;
   width: 50%;

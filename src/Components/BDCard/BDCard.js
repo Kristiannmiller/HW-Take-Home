@@ -1,8 +1,17 @@
 import './BDCard.css';
 import {Doughnut, defaults} from 'react-chartjs-2';
+import React, { useState } from 'react';
 
 
 function BDCard({ cardData }) {
+
+  const [brokerOption, setBrokerOption] = useState(cardData.labels[0]);
+  const [carrierOption, setCarrierOption] = useState(cardData.labels[0]);
+
+  const changeOption = (li, isBroker) => {
+    isBroker ? setBrokerOption(li) : setCarrierOption(li)
+  }
+
   const brokerChart = {
     labels: cardData.labels,
     datasets: [
@@ -52,18 +61,22 @@ function BDCard({ cardData }) {
 		}
 	}
 
-	const createList = (list) => {
-		let colors = [
-			'#003D40',
-			'#00CE5F',
-			'#00E834',
-			'#00E9CB'
-		]
+	const createList = (list, isBroker) => {
+		let colors = [ '#003D40', '#00CE5F', '#00E834', '#00E9CB' ]
 		return list.map((li, i) => {
 			let color = colors[i]
-			return (
-				<li style={{color: color}}><span style={{color: '#6D7777'}}>{li}</span></li>
-			)
+			if(isBroker && li === brokerOption || !isBroker && li === carrierOption) {
+        return (
+          <li onClick={(event) => changeOption(li, isBroker)} style={{color: color}}>
+          <span style={{color: '#6D7777'}}><strong>{li}</strong></span>
+          </li>
+			)} else {
+        return (
+          <li onClick={(event) => changeOption(li, isBroker)} style={{color: color}}>
+          <span style={{color: '#6D7777'}}>{li}</span>
+          </li>
+        )
+      }
 		})
 	}
 
@@ -76,7 +89,7 @@ function BDCard({ cardData }) {
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(cardData.labels)}
+							{createList(cardData.labels, true)}
 						</ul>
 					</section>
 					<section className="chart-area">
@@ -96,7 +109,7 @@ function BDCard({ cardData }) {
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(cardData.labels)}
+							{createList(cardData.labels, false)}
 						</ul>
 					</section>
 					<section className="chart-area">
