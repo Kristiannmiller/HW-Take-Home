@@ -2,7 +2,6 @@ import './App.css';
 import Header from '../Header/Header'
 import Navigation from '../Navigation/Navigation'
 import Dashboard from '../Dashboard/Dashboard'
-import React, { useState, useEffect } from 'react';
 import { brokerQuery } from '../../apiCalls';
 import { useQuery } from '@apollo/client'
 

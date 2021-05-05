@@ -15,7 +15,7 @@ canvas {
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .legend {
   padding-left: 33px;

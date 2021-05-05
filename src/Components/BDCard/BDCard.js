@@ -1,5 +1,5 @@
 import './BDCard.css';
-import {Doughnut, defaults} from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import React, { useState } from 'react';
 
 
@@ -93,8 +93,6 @@ function BDCard({ cardData }) {
       return `${percentage}% || $${value}`
     }
   }
-
-
 
   return (
     <section className="card">

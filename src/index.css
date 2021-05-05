@@ -5,6 +5,12 @@ form, fieldset, input, p, blockquote, table, th, td, embed, object {
   text-align: center;
   box-sizing: border-box;
 	}
+	button {
+		background: none;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;

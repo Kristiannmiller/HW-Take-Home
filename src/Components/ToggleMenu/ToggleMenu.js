@@ -8,14 +8,14 @@ function ToggleMenu({ adjustOptions, selected }) {
 
   return (
     <section className="toggle-menu">
-      <a onClick={() => handleClick("premium")}
-      className={selected.premium ? "toggle-option active" : "toggle-option"}>Premium Range</a>
-      <a onClick={() => handleClick("markets")}
-      className={selected.markets ? "toggle-option active" : "toggle-option"}>Markets</a>
-      <a onClick={() => handleClick("industries")}
-      className={selected.industries ? "toggle-option active" : "toggle-option"}>Industries</a>
-      <a onClick={() => handleClick("products")}
-      className={selected.products ? "toggle-option active" : "toggle-option"}>Products</a>
+      <button onClick={() => handleClick("premium")}
+      className={selected.premium ? "toggle-option active" : "toggle-option"}>Premium Range</button>
+      <button onClick={() => handleClick("markets")}
+      className={selected.markets ? "toggle-option active" : "toggle-option"}>Markets</button>
+      <button onClick={() => handleClick("industries")}
+      className={selected.industries ? "toggle-option active" : "toggle-option"}>Industries</button>
+      <button onClick={() => handleClick("products")}
+      className={selected.products ? "toggle-option active" : "toggle-option"}>Products</button>
     </section>
   );
 }
