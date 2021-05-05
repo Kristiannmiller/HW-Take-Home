@@ -2,10 +2,9 @@ import './BDCard.css';
 import {Doughnut, defaults} from 'react-chartjs-2';
 
 
-function BDCard() {
-  const brokerChart= {
-    labels: ['Under $1,000', '$1,000 - $10,000', '$10,000 - $50,000',
-             'Over $50,000'],
+function BDCard({ cardData }) {
+  const brokerChart = {
+    labels: cardData.labels,
     datasets: [
       {
 				border: 'none',
@@ -15,7 +14,23 @@ function BDCard() {
           '#00E834',
           '#00E9CB'
         ],
-        data: [25, 25, 25, 25],
+        data: cardData.brokerNums,
+				borderWidth: '0'
+      }
+    ]
+  }
+  const carrierChart = {
+    labels: cardData.labels,
+    datasets: [
+      {
+				border: 'none',
+        backgroundColor: [
+          '#003D40',
+          '#00CE5F',
+          '#00E834',
+          '#00E9CB'
+        ],
+        data: cardData.carrierNums,
 				borderWidth: '0'
       }
     ]
@@ -57,11 +72,11 @@ function BDCard() {
   return (
     <section className="card">
       <article className="card-segment">
-        <h4>Premium Range</h4>
+        <h4>{cardData.chartTitle}</h4>
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(['Under $1,000', '$1,000 - $10,000', '$10,000 - $50,000', 'Over $50,000'])}
+							{createList(cardData.labels)}
 						</ul>
 					</section>
 					<section className="chart-area">
@@ -77,16 +92,16 @@ function BDCard() {
         </section>
       </article>
       <article className="card-segment">
-        <h4>Premium Range</h4>
+        <h4>{cardData.chartTitle}</h4>
 				<section className="chart">
 					<section className="legend">
 						<ul>
-							{createList(['Under $1,000', '$1,000 - $10,000', '$10,000 - $50,000', 'Over $50,000'])}
+							{createList(cardData.labels)}
 						</ul>
 					</section>
 					<section className="chart-area">
 		        <Doughnut
-		          data={brokerChart}
+		          data={carrierChart}
 		          options={options}
 		        />
 						<section className="select-data">

@@ -1,7 +1,7 @@
 import './Dashboard.css';
 import ToggleMenu from '../ToggleMenu/ToggleMenu'
 import BDCard from '../BDCard/BDCard'
-import { brokerQuery } from '../../apiCalls';
+import { brokerCarrierQuery } from '../../apiCalls';
 import { useQuery } from '@apollo/client';
 import React, { useState, useEffect } from 'react';
 
@@ -14,11 +14,52 @@ function Dashboard() {
   const [industriesMenu, setIndustriesMenu] = useState(false);
   const [productsMenu, setProductsMenu] = useState(false);
 
+  const { loading, error, data } = useQuery(brokerCarrierQuery);
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>Error!</h1>;
+
   const adjustOptions = (optionToChange) => {
     optionToChange === "premium" && setPremiumMenu(!premiumMenu)
     optionToChange === "markets" && setMarketsMenu(!marketsMenu)
     optionToChange === "industries" && setIndustriesMenu(!industriesMenu)
     optionToChange === "products" && setProductsMenu(!productsMenu)
+  }
+
+  const createCard = (cardInfo) => {
+    return(
+      <BDCard
+        cardData={cardInfo}
+      />
+    )
+  }
+
+  const premiumCard = () => {
+    let labels = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => range.title)
+    let brokerNums = data.mostRecentSnapshot.brokerSlice.premiumRange.map(range => Math.round(range.proportion))
+    let carrierNums = data.mostRecentSnapshot.carrierSlice.premiumRange.map(range => Math.round(range.proportion))
+    return {labels, brokerNums, carrierNums, chartTitle: 'Premium Range'}
+  }
+
+  const marketsCard = () => {
+    let labels = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => range.title)
+    let brokerNums = data.mostRecentSnapshot.brokerSlice.brokerDivision.map(range => Math.round(range.proportion))
+    let carrierNums = data.mostRecentSnapshot.carrierSlice.brokerDivision.map(range => Math.round(range.proportion))
+    return {labels, brokerNums, carrierNums, chartTitle: 'Markets'}
+  }
+
+  const industriesCard = () => {
+    let labels = data.mostRecentSnapshot.brokerSlice.industries.map(range => range.title)
+    let brokerNums = data.mostRecentSnapshot.brokerSlice.industries.map(range => Math.round(range.proportion))
+    let carrierNums = data.mostRecentSnapshot.carrierSlice.industries.map(range => Math.round(range.proportion))
+    return {labels, brokerNums, carrierNums, chartTitle: 'Industries'}
+  }
+
+  const productsCard = () => {
+    let labels = data.mostRecentSnapshot.brokerSlice.products.map(range => range.title)
+    let brokerNums = data.mostRecentSnapshot.brokerSlice.products.map(range => Math.round(range.proportion))
+    let carrierNums = data.mostRecentSnapshot.carrierSlice.products.map(range => Math.round(range.proportion))
+    return {labels, brokerNums, carrierNums, chartTitle: 'Products'}
   }
 
   return (
@@ -36,7 +77,10 @@ function Dashboard() {
         <h3>Carrier Placement</h3>
       </section>
       <section className="cards">
-        <BDCard />
+        {premiumMenu && createCard(premiumCard())}
+        {marketsMenu && createCard(marketsCard())}
+        {industriesMenu && createCard(industriesCard())}
+        {productsMenu && createCard(productsCard())}
       </section>
     </section>
   );
