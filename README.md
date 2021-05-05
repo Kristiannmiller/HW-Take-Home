@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Kristiannmiller/HW-Take-Home">
-    <img src="./src/assets/walkthrough.gif" alt="an overview gif of the application in action" width="600">
+    <img src="./src/Assets/walkthrough.gif" alt="an overview gif of the application in action" width="600">
   </a>
   <h1 align="center" style="padding:0px; margin:10px 0px">Front End Code Challenge</h1>
   <h5 align="center" style="margin:0px 0px 20px 0px; padding:0px;">Executed by Kristi Miller</h5>
@@ -57,7 +57,7 @@ npm test
 
 6. FINISHING TOUCHES : I took a little time at the end to fix a few minor styling issues, address some linting issues, and update the project ReadMe.
 
-## Wins
+### Wins
 
 - Planning - I am a very organized person who likes to research and plan before any project. I successfully took the time to research the technologies I had not used before (Apollo, graphQL), and the time spent researching paid off. I also took the time to utilize a project board, which helped me stay on task and meet deadline goals.
 
@@ -65,18 +65,18 @@ npm test
 
 - Innovative Solutions - Given the time constraint of five hours, I found myself coming up with quick ways to solve some of the time consuming issues that relying on event bubbling can bring up. I realized that most areas that I would normally rely on event bubbling to determine the source of an event could be quickly handled with a specific string. This might not be the most ideal solution, but it was one that saved me a lot of time and digging throughout this project.
 
-## Challenges
+### Challenges
 
 - Chart.js - While I'm familiar with Chart.js and have used it in a few previous projects, I have never used it with TypeScript. I had initially decided to use TypeScript because I've found the errors TypeScript provides to be helpful in past projects. However, when it came time to bring in Chart.js, adding types to those components was a lot more difficult and time-consuming than I had anticipated. I decided to move to JavaScript to save time, but I did spent a little more time than I should have trying to get TypeScript to work.
 
 - Testing with GraphQL/Apollo - Since these are new technologies for me, I didn't quite have enough time to research how to mock out the api calls and properly test the components. Ideally, I would have liked to include more unit and integration tests.
 
-## Contact Kristi
+#### Contact Kristi
 * [Github](https://github.com/Kristiannmiller)
 * [Portfolio](http://www.kristiannmiller.com)
 * [LinkedIn](https://www.linkedin.com/in/kristiannmiller/)
 
-## Additional Links
+#### Additional Links
 - [Challenge Outline](https://docs.google.com/document/d/1HB2hcpzUeHeaxDxUnJFIjzq0dlXYKixPNK6wtz6RaF8/edit)
 - [Schema](https://hw-fe-challenge-api.herokuapp.com/graphiql)
 - [Repository](https://github.com/Kristiannmiller/HW-Take-Home)
