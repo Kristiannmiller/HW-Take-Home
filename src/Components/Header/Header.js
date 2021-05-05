@@ -17,7 +17,6 @@ function Header({brokerName, brokerDes}) {
       <section className="broker-data">
         <h2>{brokerName}</h2>
         <article className="broker-context">
-          <p><span className="data-title">Website</span>www.website.com</p>
           <p><span className="data-title">Summary</span>{brokerDes}</p>
         </article>
       </section>
